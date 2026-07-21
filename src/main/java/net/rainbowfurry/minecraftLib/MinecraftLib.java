@@ -1,12 +1,9 @@
 package net.rainbowfurry.minecraftLib;
 
-import net.rainbowfurry.minecraftLib.builder.InventoryBuilder;
-import net.rainbowfurry.minecraftLib.builder.ItemBuilder;
-import net.rainbowfurry.minecraftLib.builder.Translation;
+import net.rainbowfurry.minecraftLib.builder.*;
 import net.rainbowfurry.minecraftLib.commands.TestCommand;
 import net.rainbowfurry.minecraftLib.eventListener.ColoredSignsEvent;
-import net.rainbowfurry.minecraftLib.manager.ConfigManager;
-import net.rainbowfurry.minecraftLib.manager.LogManager;
+import net.rainbowfurry.minecraftLib.manager.*;
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,9 +12,18 @@ public final class MinecraftLib extends JavaPlugin {
     public static JavaPlugin plugin;
     public static LogManager logManager;
     public static ConfigManager configManager;
+    public static PluginConfigManager pluginConfigManager;
     public static Translation translation;
+
     public static ItemBuilder itemBuilder;
     public static InventoryBuilder inventoryBuilder;
+
+    public static XpBarManager xpBarManager;
+    public static PlayerSkullBuilder playerSkullBuilder;
+    public static BossBarManager bossBarManager;
+    public static ScoreboadBuilder scoreboadBuilder;
+    public static RTPManager rtpManager;
+    public static WorldManager worldManager;
 
     @Override
     public void onEnable() {
@@ -25,10 +31,18 @@ public final class MinecraftLib extends JavaPlugin {
         plugin = this;
         logManager = new LogManager();
         configManager = new ConfigManager();
+        pluginConfigManager = new PluginConfigManager();
         translation = new Translation();
         // DB
         inventoryBuilder = new InventoryBuilder();
         itemBuilder = new ItemBuilder(Material.AIR);
+        //
+        xpBarManager = new XpBarManager();
+        playerSkullBuilder = new PlayerSkullBuilder();
+        bossBarManager = new BossBarManager();
+        scoreboadBuilder = new ScoreboadBuilder();
+        rtpManager = new RTPManager();
+        worldManager = new WorldManager();
 
         logManager.info("<green>The Plugin</green> <gradient:#FF416C:#FF4B2B:#FF8C00>MinecraftLibAPI</gradient> <green>is getting</green> <dark_green><b>started</b>!</dark_green>");
         //logManager.info("<aqua>Developer</aqua>: <gradient:#FF0000:#FF7F00:#FFFF00:#00FF00:#0000FF:#8B00FF><b>RainbowFurry</b></gradient>");
