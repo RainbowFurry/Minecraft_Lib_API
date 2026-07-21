@@ -11,7 +11,7 @@ A lightweight and modular library for **Spigot/Paper** plugins that provides reu
 * 🏷️ BossBar Manager
 * ⭐ Experience Bar Manager
 * 💬 ActionBar Manager
-* 📦 Inventory API *(planned/in development)*
+* 📦 Inventory API
 * 🛠️ Utility Classes
 * 🔧 Easy-to-use API
 
