@@ -1,0 +1,17 @@
+name: MinecraftLibAPI
+version: '1.0'
+main: net.rainbowfurry.minecraftLib.MinecraftLib
+api-version: '1.21'
+prefix: RF_MinecraftLibAPI
+authors: [ RainbowFurry ]
+description: All Essentials Commands you need
+website: https://www.rainbowfurry.com
+
+commands:
+  test:
+    description: A test Command
+    usage: /test
+    aliases: [t, testing]
+    permission: thisplugin.test
+    permission-message: You do not have the Permission for this Command I am sorry...
+
